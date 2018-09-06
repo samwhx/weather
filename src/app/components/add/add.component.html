@@ -13,6 +13,6 @@
 <mat-list>
   <mat-list-item *ngFor="let city of listOfCities, let i = index">
     <button mat-raised-button color="accent" (click)="navigateToList(city)"> {{city | uppercase}} </button>
-    <button mat-raised-button color="warn" style= "margin:1em;" (click)="deleteCity(i)"> Delete </button>
+    <button mat-mini-fab color="warn" style= "margin:0.2em;" (click)="deleteCity(i)"> X </button>
   </mat-list-item>
 </mat-list>
