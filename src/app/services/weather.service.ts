@@ -10,7 +10,7 @@ import { catchError} from 'rxjs/operators';
 export class WeatherService {
 
   //variable
-  cities = []; //array of city list added
+  cities: Array<string> = []; //array of city list added
   city : string = ''; //selected city for api call
 
   constructor(private http: HttpClient) {
@@ -26,7 +26,6 @@ export class WeatherService {
   }
 
   addCity(city){
-    this.cities = [];
     console.log('Cities array inside service', this.cities);
     this.cities.push(city); //add new city into array
     localStorage.setItem('cities', JSON.stringify(this.cities)); //save new array into localstorage
