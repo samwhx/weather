@@ -9,10 +9,13 @@ import { catchError} from 'rxjs/operators';
 })
 export class WeatherService {
 
-  init(){
   //variable
-  let cities: Array<string> = []; //array of city list added
-  let city : string = ''; //selected city for api call
+  cities: Array<string> = []; //array of city list added
+  city : string = ''; //selected city for api call
+
+  init () {
+    this.cities = [];
+    this.city = '';
   }
 
   constructor(private http: HttpClient) {
