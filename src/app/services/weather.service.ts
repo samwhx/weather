@@ -14,8 +14,6 @@ export class WeatherService {
   city : string = ''; //selected city for api call
 
   constructor(private http: HttpClient) {
-    this.cities = [];
-    this.city = '';
     }
 
   getWeather(city): Observable<any>{
@@ -28,7 +26,7 @@ export class WeatherService {
   }
 
   addCity(city){
-    this.cities.push(city) //add new city into array
+    this.cities.push(city); //add new city into array
     localStorage.setItem('cities', JSON.stringify(this.cities)); //save new array into localstorage
     console.log('List inside localStorage', JSON.parse(localStorage.getItem('cities')));
     return of(); //of means observable
