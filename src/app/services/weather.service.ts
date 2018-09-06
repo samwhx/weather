@@ -14,6 +14,8 @@ export class WeatherService {
   city : string = ''; //selected city for api call
 
   constructor(private http: HttpClient) {
+    this.cities = [];
+    this.city = '';
     }
 
   getWeather(city): Observable<any>{
