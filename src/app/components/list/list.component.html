@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">Weather for {{result.country}}</mat-toolbar>
+<mat-card>
+  <img mat-card-image src="https://s3.amazonaws.com/tinycards/image/a288321180dc74ab18c7a693c88ec34d" alt="Photo of a Sky">
+  <mat-card-content>
+    <p>
+      Temperature : {{result.temp}}
+    </p>
+    <p>
+      Humidity : {{result.humidity}}
+    </p>
+    <p>
+      Pressure : {{result.pressure}}
+    </p>
+    <p>
+      Description : {{result.desc}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-button (click)="goBack()"><mat-icon>keyboard_backspace</mat-icon></button>
+    <button mat-button><mat-icon>thumb_up</mat-icon></button>
+    <button mat-button><mat-icon>share</mat-icon></button>
+  </mat-card-actions>
+</mat-card>

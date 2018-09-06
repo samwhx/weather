@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">Add/Select City for Weather Summary</mat-toolbar>
+
+<form [formGroup]="cityForm" (ngSubmit)="onSubmit()" novalidate fxLayout="row" fxLayoutAlign="space-between center">
+  <div formGroupName="cityData" novalidate>
+      <mat-form-field>
+          <input matInput placeholder="City Name" formControlName="city">
+        </mat-form-field>
+    </div>
+  <button mat-raised-button color="primary" type="submit" [disabled]="cityForm.pristine">Save</button>
+  <button mat-raised-button color="primary" type="reset" (click)="reset()" [disabled]="cityForm.pristine">Reset</button>
+</form>
+
+<mat-list>
+  <mat-list-item *ngFor="let city of listOfCities, let i = index">
+    <button mat-raised-button color="accent" (click)="navigateToList(city)"> {{city | uppercase}} </button>
+    <button mat-raised-button color="warn" style= "margin:1em;" (click)="deleteCity(i)"> Delete </button>
+  </mat-list-item>
+</mat-list>
