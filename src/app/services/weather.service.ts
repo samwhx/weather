@@ -13,7 +13,7 @@ export class WeatherService {
   cities: Array<string> = []; //array of city list added
   city : string = ''; //selected city for api call
 
-  init () {
+  init () { //initialize the variables on start of service
     this.cities = [];
     this.city = '';
   }
