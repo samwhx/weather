@@ -9,7 +9,7 @@
       "urls": [
         "https://samwhx.github.io/weather/favicon.ico",
         "https://samwhx.github.io/weather/index.html",
-        "https://samwhx.github.io/weather/main.957d2aea77a268088777.js",
+        "https://samwhx.github.io/weather/main.0d5b9c08c1d70a285418.js",
         "https://samwhx.github.io/weather/polyfills.7a0e6866a34e280f48e7.js",
         "https://samwhx.github.io/weather/runtime.a66f828dca56eeb90e02.js",
         "https://samwhx.github.io/weather/styles.a85abff7fc350aabe53d.css"
@@ -44,8 +44,8 @@
     "https://samwhx.github.io/weather/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://samwhx.github.io/weather/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://samwhx.github.io/weather/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://samwhx.github.io/weather/index.html": "a26fa6a94f753e9592b2e4850c57d8a87730856a",
-    "https://samwhx.github.io/weather/main.957d2aea77a268088777.js": "b331b12b177ad57daf97c260ac3d7cb456d245dc",
+    "https://samwhx.github.io/weather/index.html": "ba7592b1f82763e9e4340898e0d54f1f597ae44c",
+    "https://samwhx.github.io/weather/main.0d5b9c08c1d70a285418.js": "2c841f20e5e8b5d2817638ba99df5d5d11ef41c6",
     "https://samwhx.github.io/weather/polyfills.7a0e6866a34e280f48e7.js": "9f0b8341c0a0caec1581da2f255eb5dbb8e12303",
     "https://samwhx.github.io/weather/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
     "https://samwhx.github.io/weather/styles.a85abff7fc350aabe53d.css": "8e5f6cc6fe20f982aa11b6c8ef8663ad9bb277a4"
