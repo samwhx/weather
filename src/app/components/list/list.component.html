@@ -1,29 +1,41 @@
-<mat-toolbar color="primary">Weather for {{result.city}}</mat-toolbar>
+<mat-toolbar color="primary">Weather for {{result.city}}<img src="{{result.weather_icon}}" alt="Weather Icon" height="42" width="42"></mat-toolbar>
+
+<!-- google map -->
+<agm-map [zoom]="12" [latitude]="result.coord_latitude" [longitude]="result.coord_longitude">
+  <agm-marker [latitude]="result.coord_latitude" [longitude]="result.coord_longitude"></agm-marker>
+</agm-map>
+
+<mat-toolbar>Weather Report for: {{result.datetime}}</mat-toolbar>
 <mat-card>
-    <agm-map [zoom]="12" [latitude]="result.coord_latitude" [longitude]="result.coord_longitude">
-        <agm-marker [latitude]="result.coord_latitude" [longitude]="result.coord_longitude"></agm-marker>
-      </agm-map>
-  <mat-card-content>
+  <mat-card-content fxLayout="column" style="font-size: 1em; font-weight: 500;">
     <p>
-      {{result.coord_longitude}}
-      {{result.coord_latitude}}
-      {{result.weather_main}}
-      {{result.weather_description}}
-      {{result.weather_icon}}
-      {{result.main_temp}}
-      {{result.main_pressure}}
-      {{result.main_humidity}}
-      {{result.main_temp_min}}
-      {{result.main_temp_max}}
-      {{result.visibility}}
-      {{result.wind_speed}}
-      {{result.wind_deg}}
-      {{result.clouds}}
-      {{result.datetime}}
-      {{result.sunrise}}
-      {{result.sunset}}
-      {{result.city}}
-      {{result.country}}
+      Sky Condition: {{result.weather_main}} - {{result.weather_description}}
+    </p>
+    <p>
+      Temperature: {{result.main_temp}}
+      <br>
+      Low to High: {{result.main_temp_min}} - {{result.main_temp_max}}
+    </p>
+    <p>
+      Pressure: {{result.main_pressure}}
+    </p>
+    <p>
+      Humidity: {{result.main_humidity}}
+    </p>
+    <p>
+      Cloud Obscurity: {{result.clouds}}
+    </p>
+    <p>
+      Wind Speed: {{result.wind_speed}}
+    </p>
+    <p>
+      Visibility: {{result.visibility}}
+    </p>
+    <p>
+      Sunrise: {{result.sunrise}}
+    </p>
+    <p>
+      Sunset: {{result.sunset}}
     </p>
   </mat-card-content>
   <mat-card-actions fxLayout="row" fxLayoutAlign="space-between center">

@@ -23,7 +23,6 @@ export class ListComponent implements OnInit {
     main_temp_max: '',//default kelvin
     visibility: '',//visibility in metres
     wind_speed: '',//meter/sec
-    wind_deg: '',//direction in degrees
     clouds: '',//cloudiness in %
     datetime: '',//UNIX epoch
     sunrise: '',//UNIX epoch
@@ -52,18 +51,17 @@ export class ListComponent implements OnInit {
           this.result.weather_main = data.weather[0].main;
           this.result.weather_description = data.weather[0].description;
           this.result.weather_icon = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-          this.result.main_temp = (data.main.temp - 273).toFixed(2)+' Celcius';
+          this.result.main_temp = (data.main.temp - 273).toFixed(2)+' \xB0C'; //shows degree celcius
           this.result.main_pressure = data.main.pressure + ' hPa';
           this.result.main_humidity = data.main.humidity + ' %';
-          this.result.main_temp_min = (data.main.temp_min - 273).toFixed(2)+' \xB0Celcius'; //shows degree celcius
-          this.result.main_temp_max = (data.main.temp_max - 273).toFixed(2)+' \xB0Celcius'; //shows degree celcius
+          this.result.main_temp_min = (data.main.temp_min - 273).toFixed(2)+' \xB0C'; //shows degree celcius
+          this.result.main_temp_max = (data.main.temp_max - 273).toFixed(2)+' \xB0C'; //shows degree celcius
           this.result.visibility = data.visibility + 'm';
           this.result.wind_speed = data.wind.speed + ' m/s';
-          this.result.wind_deg = data.wind.deg + '\xB0'; //shows degree
           this.result.clouds = data.clouds.all + ' %';
-          this.result.datetime = (new Date(1000*data.dt)).toString();
-          this.result.sunrise = (new Date(1000*data.sys.sunrise)).toString();
-          this.result.sunset = (new Date(1000*data.sys.sunset)).toString();
+          this.result.datetime = (new Date(1000*data.dt)).toLocaleString(); //time and date. toLocaleDateString() for date only
+          this.result.sunrise = (new Date(1000*data.sys.sunrise)).toLocaleTimeString(); //time only
+          this.result.sunset = (new Date(1000*data.sys.sunset)).toLocaleTimeString(); //time only
           this.result.city = data.name;
           this.result.country = data.sys.country;
         })
