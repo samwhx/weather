@@ -29,6 +29,9 @@ import { RoutingModule } from './app.routing';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+//angular google maps
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +46,8 @@ import { environment } from '../environments/environment';
     FlexLayoutModule,
     HttpClientModule,
     RoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AgmCoreModule.forRoot({ apiKey: 'AIzaSyBHy1h84PtxapMNqZ7cKtHlLE9td5rbGNQ'})
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]

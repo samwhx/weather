@@ -1,6 +1,8 @@
-<mat-toolbar color="primary">Weather for {{result.country}}</mat-toolbar>
+<mat-toolbar color="primary">Weather for {{result.city}}</mat-toolbar>
 <mat-card>
-  <img mat-card-image src="https://s3.amazonaws.com/tinycards/image/a288321180dc74ab18c7a693c88ec34d" alt="Photo of a Sky">
+    <agm-map [zoom]="12" [latitude]="result.coord_latitude" [longitude]="result.coord_longitude">
+        <agm-marker [latitude]="result.coord_latitude" [longitude]="result.coord_longitude"></agm-marker>
+      </agm-map>
   <mat-card-content>
     <p>
       {{result.coord_longitude}}
