@@ -36,7 +36,7 @@ export class AddComponent implements OnInit {
   //submit button
   onSubmit () {
     console.log ('Form data: ', this.cityForm.value.city);
-    this.weatherSvc.addCity(this.cityForm.value.city); //add city to city list in service
+    this.weatherSvc.addCity(this.cityForm.value.city.replace(/\s*$/,'')); //add city to city list in service
     this.cityForm.reset(); //form reset
     this.weatherSvc.getCities().subscribe((value) => { //retrieve list of cities from service
       this.listOfCities = value;
