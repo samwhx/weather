@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AddComponent } from './components/add/add.component';
 import { ListComponent } from './components/list/list.component';
+import { RedirectComponent } from './components/redirect/redirect.component';
 
 //services
 import { WeatherService } from './services/weather.service';
@@ -36,7 +37,8 @@ import { AgmCoreModule } from '@agm/core';
   declarations: [
     AppComponent,
     AddComponent,
-    ListComponent
+    ListComponent,
+    RedirectComponent
   ],
   imports: [
     BrowserModule,

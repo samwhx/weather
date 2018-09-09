@@ -46,6 +46,9 @@ export class ListComponent implements OnInit {
     this.weatherSvc.getWeather(this.weatherSvc.selectedCity)  //everytime init (redirected from add) get the weather data for selected city recorded in service
         .subscribe((data: any) => {
           console.log('Data passed back from api: ', data);
+          if (data.length < 1) {
+            this.route.navigate(['/redirect']);
+          };
           this.result.coord_longitude = data.coord.lon;
           this.result.coord_latitude = data.coord.lat;
           this.result.weather_main = data.weather[0].main;

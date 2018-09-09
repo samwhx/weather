@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AddComponent } from './components/add/add.component';
 import { ListComponent } from './components/list/list.component';
+import { RedirectComponent } from './components/redirect/redirect.component';
 
 const appRoutes = [
     {
@@ -13,6 +14,10 @@ const appRoutes = [
     {
         path: 'list',
         component: ListComponent,
+    },
+    {
+        path: 'redirect',
+        component: RedirectComponent,
     },
     {
         path: '',
