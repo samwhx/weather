@@ -8,6 +8,8 @@
   <button mat-raised-button color="primary" style= "margin:0.2em;" type="reset" (click)="reset()" [disabled]="cityForm.pristine">Reset</button>
 </form>
 
+<mat-toolbar>Click on a City Name Below</mat-toolbar>
+
 <mat-list>
   <mat-list-item *ngFor="let city of listOfCities, let i = index">
     <button mat-raised-button color="accent" (click)="navigateToList(city)"> {{city | uppercase}} </button>
