@@ -11,12 +11,7 @@ export class WeatherService {
 
   //variable
   cities: Array<string> = []; //array of city list added
-  city : string = ''; //selected city for api call
-
-  init () { //initialize the variables on start of service
-    this.cities = [];
-    this.city = '';
-  }
+  city: string = ''; //selected city for api call
 
   constructor(private http: HttpClient) {
     }
@@ -31,10 +26,11 @@ export class WeatherService {
   }
 
   addCity(city){
-    console.log('Cities array inside service', this.cities);
+    JSON.parse(localStorage.getItem('cities')) ? this.cities=JSON.parse(localStorage.getItem('cities')) : this.cities=[]; //check if array is null. if null, initializes properly. if not, retrieve list from localstorage
+    console.log('List in localstorage before adding', this.cities);
     this.cities.push(city); //add new city into array
     localStorage.setItem('cities', JSON.stringify(this.cities)); //save new array into localstorage
-    console.log('List inside localStorage', JSON.parse(localStorage.getItem('cities')));
+    console.log('List in localstorage after adding', JSON.parse(localStorage.getItem('cities')));
     return of(); //of means observable
 
   }

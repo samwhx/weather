@@ -1,11 +1,9 @@
 <mat-toolbar color="primary">Add/Select City for Weather Summary</mat-toolbar>
 
 <form [formGroup]="cityForm" (ngSubmit)="onSubmit()" novalidate fxLayout="row" fxLayoutAlign="start center">
-  <div formGroupName="cityData" novalidate>
-      <mat-form-field>
-          <input matInput placeholder="City Name" formControlName="city">
-        </mat-form-field>
-    </div>
+  <mat-form-field>
+    <input matInput placeholder="City Name" formControlName="city">
+  </mat-form-field>
   <button mat-raised-button color="primary" style= "margin:0.2em;" type="submit" [disabled]="cityForm.pristine">Save</button>
   <button mat-raised-button color="primary" style= "margin:0.2em;" type="reset" (click)="reset()" [disabled]="cityForm.pristine">Reset</button>
 </form>
