@@ -11,11 +11,25 @@ export class ListComponent implements OnInit {
 
   //variables
   result = {
-    country: '',
-    temp: '',
-    humidity: '',
-    pressure: '',
-    desc: ''
+    coord_longitude: '',//city geo location
+    coord_latitude: '',//city geo location
+    weather_main: '',//group of weather params
+    weather_description: '',//conditions within group
+    weather_icon: '',//e.g. for 10d. url is http://openweathermap.org/img/w/10d.png
+    main_temp: '',//default kelvin
+    main_pressure: '',//atmospheric pressure on sea level. hPa
+    main_humidity: '',//%
+    main_temp_min: '',//default kelvin
+    main_temp_max: '',//default kelvin
+    visibility: '',//visibility in metres
+    wind_speed: '',//meter/sec
+    wind_deg: '',//direction in degrees
+    clouds: '',//cloudiness in %
+    datetime: '',//UNIX epoch
+    sunrise: '',//UNIX epoch
+    sunset: '',//UNIX epoch
+    city: '',//city name
+    country: ''//country code
   };
   selectedCity: '';
 
@@ -33,10 +47,25 @@ export class ListComponent implements OnInit {
     this.weatherSvc.getWeather(this.weatherSvc.selectedCity)  //everytime init (redirected from add) get the weather data for selected city recorded in service
         .subscribe((data: any) => {
           console.log('Data passed back from api: ', data);
-          this.result = data.main;
-          this.result.temp = (data.main.temp - 273).toFixed(2)+' Celcius'; //transforms temp from kelvin to celcius
-          this.result.desc = data.weather[0].description;
-          this.result.country = data.name;
+          this.result.coord_longitude = data.coord.longitude;
+          this.result.coord_latitude = data.coord.latitude;
+          this.result.weather_main = data.weather[0].main;
+          this.result.weather_description = data.weather[0].description;
+          this.result.weather_icon = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+          this.result.main_temp = (data.main.temp - 273).toFixed(2)+' Celcius';
+          this.result.main_pressure = data.main.pressure + ' hPa';
+          this.result.main_humidity = data.main.humidity + ' %';
+          this.result.main_temp_min = (data.main.temp_min - 273).toFixed(2)+' \xB0Celcius'; //shows degree celcius
+          this.result.main_temp_max = (data.main.temp_max - 273).toFixed(2)+' \xB0Celcius'; //shows degree celcius
+          this.result.visibility = data.visibility + 'm';
+          this.result.wind_speed = data.wind.speed + ' m/s';
+          this.result.wind_deg = data.wind.deg + '\xB0'; //shows degree
+          this.result.clouds = data.clouds.all + ' %';
+          this.result.datetime = (new Date(1000*data.dt)).toString();
+          this.result.sunrise = (new Date(1000*data.sys.sunrise)).toString();
+          this.result.sunset = (new Date(1000*data.sys.sunset)).toString();
+          this.result.city = data.name;
+          this.result.country = data.sys.country;
         })
   }
 

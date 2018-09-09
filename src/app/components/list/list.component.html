@@ -3,16 +3,25 @@
   <img mat-card-image src="https://s3.amazonaws.com/tinycards/image/a288321180dc74ab18c7a693c88ec34d" alt="Photo of a Sky">
   <mat-card-content>
     <p>
-      Temperature : {{result.temp}}
-    </p>
-    <p>
-      Humidity : {{result.humidity}}
-    </p>
-    <p>
-      Pressure : {{result.pressure}}
-    </p>
-    <p>
-      Description : {{result.desc}}
+      {{result.coord_longitude}}
+      {{result.coord_latitude}}
+      {{result.weather_main}}
+      {{result.weather_description}}
+      {{result.weather_icon}}
+      {{result.main_temp}}
+      {{result.main_pressure}}
+      {{result.main_humidity}}
+      {{result.main_temp_min}}
+      {{result.main_temp_max}}
+      {{result.visibility}}
+      {{result.wind_speed}}
+      {{result.wind_deg}}
+      {{result.clouds}}
+      {{result.datetime}}
+      {{result.sunrise}}
+      {{result.sunset}}
+      {{result.city}}
+      {{result.country}}
     </p>
   </mat-card-content>
   <mat-card-actions fxLayout="row" fxLayoutAlign="space-between center">

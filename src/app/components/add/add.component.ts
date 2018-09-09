@@ -19,7 +19,7 @@ export class AddComponent implements OnInit {
   //for constructor
   createFormGroup() {
     return new FormGroup({
-        city: new FormControl()
+      city: new FormControl()
     });
   }
 
